@@ -1,0 +1,15 @@
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\bin\Debug\net8.0\ScamperersConsoleApp.exe
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\bin\Debug\net8.0\ScamperersConsoleApp.deps.json
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\bin\Debug\net8.0\ScamperersConsoleApp.runtimeconfig.json
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\bin\Debug\net8.0\ScamperersConsoleApp.dll
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\bin\Debug\net8.0\ScamperersConsoleApp.pdb
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\ScamperersConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\ScamperersConsoleApp.AssemblyInfoInputs.cache
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\ScamperersConsoleApp.AssemblyInfo.cs
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\ScamperersConsoleApp.csproj.CoreCompileInputs.cache
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\ScamperersConsoleApp.sourcelink.json
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\ScamperersConsoleApp.dll
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\refint\ScamperersConsoleApp.dll
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\ScamperersConsoleApp.pdb
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\ScamperersConsoleApp.genruntimeconfig.cache
+C:\Users\josie\Desktop\Coding\projects\ScamperersConsoleApp\obj\Debug\net8.0\ref\ScamperersConsoleApp.dll
