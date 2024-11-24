@@ -1,26 +1,6 @@
-﻿using System;
+﻿using ScamperersConsoleApp;
+using System;
 using System.Collections.Generic;
-
-public class Employee
-{
-    public string FirstName { get; set; }
-
-    public Employee(string name)
-    {
-        FirstName = name;
-    }
-}
-
-public class OfficeManager
-{
-    public void WelcomeNewEmployee(List<Employee> newEmployees)
-    {
-        foreach (var employee in newEmployees)
-        {
-            Console.WriteLine($"Hello, {employee.FirstName}. Welcome to the company, you will have lots of fun here!");
-        }
-    }
-}
 
 public class Program
 {
