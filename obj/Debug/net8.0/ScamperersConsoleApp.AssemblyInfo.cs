@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ScamperersConsoleApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d17b5b74b0299f829bc68ff0f7c2a912e838cce3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+103ec8fe10fcb8c46ed81ba69e5ad438f140ec63")]
 [assembly: System.Reflection.AssemblyProductAttribute("ScamperersConsoleApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ScamperersConsoleApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
