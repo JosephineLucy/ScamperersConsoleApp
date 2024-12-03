@@ -15,7 +15,7 @@ public class Program
             new Employee("Chandler")
         };
 
-        OfficeManager gunther = new OfficeManager();
-        gunther.WelcomeNewEmployee(newEmployees);
+        OfficeManager todd = new OfficeManager();
+        todd.WelcomeNewEmployee(newEmployees);
     }
 }
