@@ -9,6 +9,7 @@ namespace ScamperersConsoleApp.ScamperersConsoleApp.Models
     public class Candidate
     {
         public string FirstName { get; set; }
+        public int InterviewScore { get; set; }
     public Candidate (string firstName)
         {
             FirstName = firstName;
