@@ -1,6 +1,6 @@
-﻿namespace ScamperersConsoleApp
+﻿namespace ScamperersConsoleApp.ScamperersConsoleApp.Models
 {
-    internal class Employee
+    public class Employee
     {
         public string FirstName { get; set; }
 

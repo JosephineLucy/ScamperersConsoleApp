@@ -2,7 +2,7 @@
 {
     public class OfficeManager
     {
-        internal void WelcomeNewEmployee(List<Employee> newEmployees)
+        public void WelcomeNewEmployee(List<Employee> newEmployees)
         {
             foreach (var employee in newEmployees)
             {
