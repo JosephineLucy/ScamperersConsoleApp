@@ -4,9 +4,9 @@
     {
         public string FirstName { get; set; }
 
-        public Employee(string name)
+        public Employee(string firstName)
         {
-            FirstName = name;
+            FirstName = firstName;
         }
     }
 }
