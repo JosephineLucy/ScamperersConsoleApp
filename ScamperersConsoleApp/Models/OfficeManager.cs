@@ -1,4 +1,4 @@
-﻿namespace ScamperersConsoleApp
+﻿namespace ScamperersConsoleApp.ScamperersConsoleApp.Models
 {
     public class OfficeManager
     {

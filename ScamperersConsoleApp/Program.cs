@@ -1,4 +1,4 @@
-﻿using ScamperersConsoleApp;
+﻿using ScamperersConsoleApp.ScamperersConsoleApp.Models;
 
 public class Program
 {
