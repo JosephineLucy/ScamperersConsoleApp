@@ -1,53 +1,21 @@
 # Todd Comments
 
-This is much nicer, but we can still make it cleaner.
+1. I approve of being made office manager. I think if we get far enough with this app, I'm going to have you creating manager events where the Friends employees all get abused by the manager…
+2. In your Program file, `List<Candidate> hopefulCandidates = new List<Candidate>` might be nicer written as `var hopefulCandidates = new List<Candidate>`. As the type of object is already shown in the constructor, the type just adds unnecessary noise.
+3. When we chat tonight, we will decide that the Models folder should only contain Entities and data transfer objects (DTOs). We currently have no DTOs. We will also decide that Entities are items in our system that get acted upon and encapsulate data about that item. I think the only entities we have at the moment are Employee and Candidate. OfficeManager is not an entity as it only deals with functionality and isn't really an item in our system. He receives entities and does things to them, but isn't a thing himself (you would not pass the office manager to something to be acted on). We therefore need to find a new place for him. I'm thinking a folder called Logic that contains business logic might be a good place for him. So, to be clear, an entity represents a thing in our system that is manipulated by the logic. As things stand, OfficeManager only contains logic - he interviews candidates, gives them scores and converts some of them to Employees. He is not a thing that gets acted upon himself.
+4. On your master branch, I noticed your OfficeManager method for welcoming employees is called WelcomEmployee. Maybe it should be plural as he is handling a list of employees.
+5. Well done on going for a new object with Candidate with the relevant properties (score). Well done with your flow too. It was very clear. I don't think we need that amount of complexity yet though. I think we should build up slowly and what you're proposing is quite a lot. I think the directive I gave you was a bit wider in scope than I thought it was too. So all I think it should do at the moment is interview each candidate (provide a message), give them a score (a random number will do for now), then select the people that got through and welcome them.
 
-1. Sort out the file structure. You could ask chatGPT for a C# file structure. I suggest something like this for now:
+If you prefer to go the way you want to go though, I recommend making it easier for the user by selecting candidates by index. Give them a list of candidates with numbers 1 to n and just have the user input the correct number.
 
-```
-> AppName // This is your root project folder
-  > AppName // This would be your source folder (named same as project)
-    > Models // contains model and entity classes
-      OfficeManager.cs
-      Employee.cs
-    Program.cs // in source folder, but not in models
-  .gitignore // in project root, but not in source
-  README.md
-  todd-comments.md
-```
+6. Another thing to think about - there is probably a slight difference between a Candidate and an Applicant (the item in the list/database). Because the thing in storage is just a person (name and any other details we decide to attach), they won't have a score. They only need a score when they are being interviewed. So the item in storage should probably be one thing (Applicant? JobSeeker? HumanResource? Person?) and it only becomes a candidate when it is being interviewed.
 
-2. Your OfficeManager has a public class and an internal method. Is there a reason for that? It might be best to use one or the other. You might want to ask ChatGPT about the differences, but I think 'internal' means it can be used only by this project and 'public' means it can be used from outside the project. When a C# project gets compiled/built, it becomes a .dll or .exe file. If the class is public, other dlls/exes can talk to them. If they are internal, they can't. Languages like JavaScript only have the public option.
+So I suggest you create a folder called Services, have a CandidateService class with a fetchCandidates method, then, in that method have a list of Applicants, convert them to Candidates and return that list. Better still, have a Services folder and a Repositories folder (do you call it Data at your work? You could call it that if you prefer). Put an ApplicantsListRepo class containing a fetchAllApplicants method in the Repo folder that returns your list and then in your CandidateService.fetchCandidates method, use this repo method to get the applicants list, then convert them to candidates.
 
-You have the opposite going on in Employee. internal class and a public property and constructor.
+This may seem silly as here we are using a list of Applicants and what is the point of converting them when we won't use them? But the Applicants list is actually just a pretend database, so it should return an object that corresponds to what is in the database. There will be no Score on the items in the database.
 
-3. Just as an FYI, in case you don't know, you could create those employees by using the object initialiser approach too:
-
-`var todd = new Employee {FirstName = "Todd"};`
-
-Here, rather than using a constructor, it creates the object and initialises the public properties. Doing it with constructors is perfectly fine, I just thought I'd mention this nice little C# feature.
-
-4. Another point that doesn't much matter, instead of:
-
-`OfficeManager gunther = new OfficeManager();`
-
-You could go:
-
-`var gunther = new OfficeManager();`
-
-In general, when you assign a value to a variable, you don't need to worry about explicitly declaring the type if it is obvious by the declaration what the type is. We use 'var' here because the 'new OfficeManager()` makes it obvious that it's an OfficeManager type. This is especially helpful for lists and other generics
-
-`var longNamedList = new SortedList<VeryLongNamedList>();`
-
-Is nicer than:
-
-`SortedList<VeryLongNamedList> longNamedList = new SortedList<VeryLongNamedList>();`
-
-Also, I wonder if it would help if we changed gunthar's name to todd?
-
-Being as all these suggestions are either irrelevant or easy to fix, I figure I'll send another deliverable/directive:
+For instance, it's possible you would want applicants for reasons other than scoring them. You might want to invite them all to an event or you might want to email them all. Passing candidates to an EmailApplicants method would mean 'score' was completely redundant. It would also not necessarily make sense readability wise as they are not a Candidate at this stage in the process.
 
 Directive 2:
 
 As a user, I would like the office manager to interview each job applicant prior to welcoming them to the company so that we don't accidentally employ anyone that doesn't deserve a job.
-
-We should be able to specify how many employees we are looking for, then, during the interview process, each applicant should be given a number representing how well they did. The highest scoring applicants will then be welcomed to the company.
